@@ -1,0 +1,8 @@
+{% load socialaccount %}
+
+<h1>Home</h1>
+{% if user.is_authenticated %}
+<p>Hello {{ user.username }}</p>
+{% else %}
+<a href = "{% provider_login_url 'github' %}">Sign Up with Github</a>
+{% endif %}
